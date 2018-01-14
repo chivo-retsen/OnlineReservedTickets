@@ -1,0 +1,25 @@
+@startuml
+
+actor Viewer
+
+Viewer ->> Application : getListReservedTicket()
+activate Viewer
+activate Application
+Application -> DB : getListReservedTicket()
+activate DB
+Application <<-- DB : ListReservedTicket
+deactivate DB
+deactivate Application
+Viewer ->> Application : deleteReservedTicket()
+deactivate Viewer
+activate Application
+Application -> DB : deleteReservedTicket(Ticket)
+activate DB
+Application <<-- DB : delete
+deactivate DB
+
+database DB
+
+deactivate Application
+
+@enduml

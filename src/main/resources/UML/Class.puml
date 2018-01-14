@@ -1,0 +1,81 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Application{
+
++createCinema()
++fillInfoCinema()
++saveCinema()
++createFilm()
++fillInfoFilm()
++saveFilm()
++createSeance()
++fillInfoSeance()
++saveSeance()
++getListFilm()
++getInfoFilm()
++getListSeance()
++getInfoSeance()
++getInfoSeat()
++createReservation()
++getListReservedTicket()
++deleteReservedTicket()
++getInfoViewer()
++updateInfoViewer()
++saveInfoViewer()
+}
+
+class Film{
+-country : String
+-duration :short
+-genre : String
+-name : String
+-yearOfIssue : short
+}
+
+class Seance{
+-date
+-time
++readSeat()
+}
+
+class Cinema{
+-name : String
+-address : String
++createSeance()
++readSeance()
++updateSeance()
++deleteSeance()
+}
+
+class Seat{
+-row : byte
+-place : byte
++numberReservedSeats()
+}
+
+class ReservedTicket{
+-code : int
+-value : int
++inputOrderData()
+}
+
+class IndividualCabinet{
+-firstName : String
+-lastName : String
+-phoneNumber: long
++createReservedTicket()
++readReservedTicket()
++deleteReservedTicket()
+}
+
+Application "1" -- "0..*" Film
+Application "1" -- "0..*" Cinema
+Film "1" -- "0..*" Seance
+Seance "1" -- "0..*" ReservedTicket
+ReservedTicket "0..*" -- "1" Seat
+Cinema "1" -- "1..*" Seat
+Cinema "1" *--  "0..*" Seance
+IndividualCabinet "1" *-- "0..*" ReservedTicket
+
+@enduml

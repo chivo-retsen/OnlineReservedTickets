@@ -1,0 +1,29 @@
+@startuml
+
+actor Viewer
+
+Viewer ->> Application : getInfoViewer()
+activate Viewer
+activate Application
+Application -> DB : getInfoViewer()
+activate DB
+Application <<-- DB : InfoViewer
+deactivate DB
+Viewer ->> Application : updateInfoViewer()
+Viewer ->> Application : saveInfoViewer()
+deactivate Viewer
+
+create InfoViewer
+Application -->> InfoViewer
+
+
+database DB
+
+Application -> DB : updateInfoViewer()
+activate DB
+Application <<-- DB
+deactivate DB
+
+deactivate Application
+
+@enduml

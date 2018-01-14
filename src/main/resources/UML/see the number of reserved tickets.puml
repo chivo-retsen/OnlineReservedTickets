@@ -1,0 +1,18 @@
+@startuml
+
+actor theater_manager
+
+theater_manager ->> Application : getListReservedTicket()
+
+activate Application
+
+database DB
+
+Application -> DB : getListReservedTicket()
+activate DB
+Application <<-- DB : ListReservedTicket
+deactivate DB
+
+deactivate Application
+
+@enduml

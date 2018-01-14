@@ -1,0 +1,41 @@
+@startuml
+left to right direction
+
+:Viewer: -|> :guest:
+:application administrator:
+:theater manager:
+
+
+rectangle OnlineReservedTickets {
+
+:guest: -- (see the list of films)
+:guest: -- (see the list of cinemas)
+:guest: -- (view the list of seance)
+
+:Viewer: -- (view personal information)
+(view personal information) <.. (change personal information) :extend
+:Viewer: -- (see the list of reserved tickets)
+(see the list of reserved tickets) <.. (cancel a reserved ticket) : extend
+(see the list of reserved tickets) <.. (redeem a reserved ticket) : extend
+(see the list of reserved tickets) <.. (view reservation code) : extend
+:Viewer: -- (reservation ticket)
+(reservation ticket) ..> (select a place) :include
+(reservation ticket) ..> (select a seance) :include
+(reservation ticket) ..> (select a cinema) :include
+(reservation ticket) ..> (fill selected film) :include
+(select a place) ..> (посмотреть свободные места) :include
+(fill selected film) ..> (see the list of films) :include
+(select a cinema) ..> (see the list of cinemas) :include
+(select a seance) ..> (view the list of seance) :include
+
+:application administrator: -- (add virtual cinema)
+:application administrator: -- (add film)
+
+:theater manager: -- (see the number of reserved tickets)
+:theater manager: -- (management virtual cinema)
+(management virtual cinema) ..> (add new seance) :include
+}
+
+
+
+@enduml

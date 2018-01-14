@@ -1,0 +1,29 @@
+@startuml
+
+actor theater_manager
+
+theater_manager ->> Application : createSeance()
+activate theater_manager
+theater_manager ->> Application : fillInfoSeance()
+theater_manager ->> Application : saveSeance()
+deactivate theater_manager
+
+activate Application
+create Seance
+Application -->> Seance
+Application -> Seance : fillInfoSeance(data, time)
+activate Seance
+Application <<-- Seance
+deactivate Seance
+destroy Seance
+
+database DB
+
+Application -> DB : saveSeance()
+activate DB
+Application <<-- DB
+deactivate DB
+
+deactivate Application
+
+@enduml

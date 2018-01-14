@@ -1,0 +1,29 @@
+@startuml
+
+actor application_administrator
+
+application_administrator ->> Application : createFilm()
+activate application_administrator
+application_administrator ->> Application : fillInfoFilm()
+application_administrator ->> Application : saveFilm()
+deactivate application_administrator
+
+activate Application
+create Film
+Application -->> Film
+Application -> Film : fillInfoCinema(name,genre, country, year, duration)
+activate Film
+Application <<-- Film
+deactivate Film
+destroy Film
+
+database DB
+
+Application -> DB : saveFilm(Film)
+activate DB
+Application <<-- DB
+deactivate DB
+
+deactivate Application
+
+@enduml

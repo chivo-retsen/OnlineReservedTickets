@@ -1,0 +1,43 @@
+@startuml
+
+actor Viewer
+
+Viewer ->> Application : getListFilm()
+activate Viewer
+activate Application
+Application -> DB : getListFilm()
+activate DB
+Application <<-- DB : ListFilm
+deactivate DB
+Viewer ->> Application : getInfoFilm()
+Viewer ->> Application : getListSeance()
+Application -> DB : getListSeance()()
+activate DB
+Application <<-- DB : ListSeance
+deactivate DB
+Viewer ->> Application : getInfoSeance()
+Viewer ->> Application : getInfoSeat()
+Viewer ->> Application : createReservation()
+deactivate Viewer
+
+
+create ReservedTicket
+Application -->> ReservedTicket : create(seance, seat)
+Application -> ReservedTicket : getCodeReservation()
+activate ReservedTicket
+Application <-- ReservedTicket : codeReservation
+deactivate ReservedTicket
+destroy ReservedTicket
+
+
+
+database DB
+
+Application -> DB : saveReservation()
+activate DB
+Application <<-- DB : reservation
+deactivate DB
+
+deactivate Application
+
+@enduml
