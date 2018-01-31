@@ -2,42 +2,42 @@
 
 actor Viewer
 
-Viewer ->> Application : getListFilm()
+Viewer ->> NesterovichAleksandr.OnlineReservedTickets.service.Application : getListFilm()
 activate Viewer
-activate Application
-Application -> DB : getListFilm()
+activate NesterovichAleksandr.OnlineReservedTickets.service.Application
+NesterovichAleksandr.OnlineReservedTickets.service.Application -> DB : getListFilm()
 activate DB
-Application <<-- DB : ListFilm
+NesterovichAleksandr.OnlineReservedTickets.service.Application <<-- DB : ListFilm
 deactivate DB
-Viewer ->> Application : getInfoFilm()
-Viewer ->> Application : getListSeance()
-Application -> DB : getListSeance()()
+Viewer ->> NesterovichAleksandr.OnlineReservedTickets.service.Application : getInfoFilm()
+Viewer ->> NesterovichAleksandr.OnlineReservedTickets.service.Application : getListSeance()
+NesterovichAleksandr.OnlineReservedTickets.service.Application -> DB : getListSeance()()
 activate DB
-Application <<-- DB : ListSeance
+NesterovichAleksandr.OnlineReservedTickets.service.Application <<-- DB : ListSeance
 deactivate DB
-Viewer ->> Application : getInfoSeance()
-Viewer ->> Application : getInfoSeat()
-Viewer ->> Application : createReservation()
+Viewer ->> NesterovichAleksandr.OnlineReservedTickets.service.Application : getInfoSeance()
+Viewer ->> NesterovichAleksandr.OnlineReservedTickets.service.Application : getInfoSeat()
+Viewer ->> NesterovichAleksandr.OnlineReservedTickets.service.Application : createReservation()
 deactivate Viewer
 
 
-create ReservedTicket
-Application -->> ReservedTicket : create(seance, seat)
-Application -> ReservedTicket : getCodeReservation()
-activate ReservedTicket
-Application <-- ReservedTicket : codeReservation
-deactivate ReservedTicket
-destroy ReservedTicket
+create NesterovichAleksandr.OnlineReservedTickets.service.ReservedTicket
+NesterovichAleksandr.OnlineReservedTickets.service.Application -->> NesterovichAleksandr.OnlineReservedTickets.service.ReservedTicket : create(seance, seat)
+NesterovichAleksandr.OnlineReservedTickets.service.Application -> NesterovichAleksandr.OnlineReservedTickets.service.ReservedTicket : getCodeReservation()
+activate NesterovichAleksandr.OnlineReservedTickets.service.ReservedTicket
+NesterovichAleksandr.OnlineReservedTickets.service.Application <-- NesterovichAleksandr.OnlineReservedTickets.service.ReservedTicket : codeReservation
+deactivate NesterovichAleksandr.OnlineReservedTickets.service.ReservedTicket
+destroy NesterovichAleksandr.OnlineReservedTickets.service.ReservedTicket
 
 
 
 database DB
 
-Application -> DB : saveReservation()
+NesterovichAleksandr.OnlineReservedTickets.service.Application -> DB : saveReservation()
 activate DB
-Application <<-- DB : reservation
+NesterovichAleksandr.OnlineReservedTickets.service.Application <<-- DB : reservation
 deactivate DB
 
-deactivate Application
+deactivate NesterovichAleksandr.OnlineReservedTickets.service.Application
 
 @enduml

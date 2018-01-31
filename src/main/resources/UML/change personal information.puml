@@ -2,28 +2,28 @@
 
 actor Viewer
 
-Viewer ->> Application : getInfoViewer()
+Viewer ->> NesterovichAleksandr.OnlineReservedTickets.service.Application : getInfoViewer()
 activate Viewer
-activate Application
-Application -> DB : getInfoViewer()
+activate NesterovichAleksandr.OnlineReservedTickets.service.Application
+NesterovichAleksandr.OnlineReservedTickets.service.Application -> DB : getInfoViewer()
 activate DB
-Application <<-- DB : InfoViewer
+NesterovichAleksandr.OnlineReservedTickets.service.Application <<-- DB : InfoViewer
 deactivate DB
-Viewer ->> Application : updateInfoViewer()
-Viewer ->> Application : saveInfoViewer()
+Viewer ->> NesterovichAleksandr.OnlineReservedTickets.service.Application : updateInfoViewer()
+Viewer ->> NesterovichAleksandr.OnlineReservedTickets.service.Application : saveInfoViewer()
 deactivate Viewer
 
 create InfoViewer
-Application -->> InfoViewer
+NesterovichAleksandr.OnlineReservedTickets.service.Application -->> InfoViewer
 
 
 database DB
 
-Application -> DB : updateInfoViewer()
+NesterovichAleksandr.OnlineReservedTickets.service.Application -> DB : updateInfoViewer()
 activate DB
-Application <<-- DB
+NesterovichAleksandr.OnlineReservedTickets.service.Application <<-- DB
 deactivate DB
 
-deactivate Application
+deactivate NesterovichAleksandr.OnlineReservedTickets.service.Application
 
 @enduml

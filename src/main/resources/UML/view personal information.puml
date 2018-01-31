@@ -2,17 +2,17 @@
 
 actor viewer
 
-viewer ->> Application : getInfoViewer()
+viewer ->> NesterovichAleksandr.OnlineReservedTickets.service.Application : getInfoViewer()
 
-activate Application
+activate NesterovichAleksandr.OnlineReservedTickets.service.Application
 
 database DB
 
-Application -> DB : getInfoViewer()
+NesterovichAleksandr.OnlineReservedTickets.service.Application -> DB : getInfoViewer()
 activate DB
-Application <<-- DB : InfoViewer
+NesterovichAleksandr.OnlineReservedTickets.service.Application <<-- DB : InfoViewer
 deactivate DB
 
-deactivate Application
+deactivate NesterovichAleksandr.OnlineReservedTickets.service.Application
 
 @enduml

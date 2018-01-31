@@ -4,9 +4,29 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>Online Reserved Tickets</groupId>
+    <groupId>NesterovichAleksandr.Online Reserved Tickets</groupId>
     <artifactId>Online Reserved Tickets</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <hibernate-version>5.0.1.Final</hibernate-version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.34</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate-version}</version>
+        </dependency>
+
+
+    </dependencies>
 
 </project>

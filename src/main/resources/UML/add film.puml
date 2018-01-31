@@ -2,28 +2,28 @@
 
 actor application_administrator
 
-application_administrator ->> Application : createFilm()
+application_administrator ->> NesterovichAleksandr.OnlineReservedTickets.service.Application : createFilm()
 activate application_administrator
-application_administrator ->> Application : fillInfoFilm()
-application_administrator ->> Application : saveFilm()
+application_administrator ->> NesterovichAleksandr.OnlineReservedTickets.service.Application : fillInfoFilm()
+application_administrator ->> NesterovichAleksandr.OnlineReservedTickets.service.Application : saveFilm()
 deactivate application_administrator
 
-activate Application
-create Film
-Application -->> Film
-Application -> Film : fillInfoCinema(name,genre, country, year, duration)
-activate Film
-Application <<-- Film
-deactivate Film
-destroy Film
+activate NesterovichAleksandr.OnlineReservedTickets.service.Application
+create NesterovichAleksandr.OnlineReservedTickets.service.Film
+NesterovichAleksandr.OnlineReservedTickets.service.Application -->> NesterovichAleksandr.OnlineReservedTickets.service.Film
+NesterovichAleksandr.OnlineReservedTickets.service.Application -> NesterovichAleksandr.OnlineReservedTickets.service.Film : fillInfoCinema(name,genre, country, duration, year)
+activate NesterovichAleksandr.OnlineReservedTickets.service.Film
+NesterovichAleksandr.OnlineReservedTickets.service.Application <<-- NesterovichAleksandr.OnlineReservedTickets.service.Film
+deactivate NesterovichAleksandr.OnlineReservedTickets.service.Film
+destroy NesterovichAleksandr.OnlineReservedTickets.service.Film
 
 database DB
 
-Application -> DB : saveFilm(Film)
+NesterovichAleksandr.OnlineReservedTickets.service.Application -> DB : saveFilm(NesterovichAleksandr.OnlineReservedTickets.service.Film)
 activate DB
-Application <<-- DB
+NesterovichAleksandr.OnlineReservedTickets.service.Application <<-- DB
 deactivate DB
 
-deactivate Application
+deactivate NesterovichAleksandr.OnlineReservedTickets.service.Application
 
 @enduml
