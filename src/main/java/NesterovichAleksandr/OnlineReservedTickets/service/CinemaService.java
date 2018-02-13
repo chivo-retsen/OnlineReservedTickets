@@ -1,32 +1,46 @@
 package NesterovichAleksandr.OnlineReservedTickets.service;
 
 import NesterovichAleksandr.OnlineReservedTickets.DAO.CinemaDAO;
+import NesterovichAleksandr.OnlineReservedTickets.entity.CinemaEntity;
 import NesterovichAleksandr.OnlineReservedTickets.utils.HibernateSessionFactory;
+import NesterovichAleksandr.OnlineReservedTickets.utils.Utils;
+import org.hibernate.Session;
+
 
 import java.sql.Connection;
 import java.util.List;
 
-public class CinemaService extends HibernateSessionFactory implements CinemaDAO {
+public class CinemaService extends Utils implements CinemaDAO {
 
-    //Connection connection = getConnection();
 
-    public void addName(Cinema name) {
 
+
+    public void create(CinemaEntity cinemaEntity) {
+        Session session = getSessionAndBeginTransaction();
+        session.save(cinemaEntity);
+        session.getTransaction().commit();
     }
 
-    public Cinema getIdCinema(int idCinema) {
+    public CinemaEntity getIdCinema(long idCinema) {
+        Session session = getSessionAndBeginTransaction();
+        CinemaEntity id = session.getEntityName(какое значение сюда передать и как?);
+        session.getTransaction().commit();
         return null;
     }
 
-    public void update(Cinema name) {
-
+    public void update(CinemaEntity cinemaEntity) {
+        Session session = getSessionAndBeginTransaction();
+        session.update(cinemaEntity);
+        session.getTransaction().commit();
     }
 
-    public void delete(Cinema name) {
-
+    public void delete(CinemaEntity cinemaEntity) {
+        Session session = getSessionAndBeginTransaction();
+        session.delete(cinemaEntity);
+        session.getTransaction().commit();
     }
 
-    public List<Cinema> getAll() {
+    public List getAll() {
         return null;
     }
 }

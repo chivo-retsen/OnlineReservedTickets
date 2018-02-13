@@ -1,23 +1,25 @@
 package NesterovichAleksandr.OnlineReservedTickets.DAO;
 
-import NesterovichAleksandr.OnlineReservedTickets.service.Cinema;
+import NesterovichAleksandr.OnlineReservedTickets.entity.CinemaEntity;
 
 import java.util.List;
 
 public interface CinemaDAO {
 
+
+
     //create
-    void addName(Cinema name);
+    void create(CinemaEntity cinemaEntity);
 
     //read
-    Cinema getIdCinema(int idCinema);
+    CinemaEntity getIdCinema(long idCinema);
 
     //update
-    void update(Cinema name);
+    void update(CinemaEntity cinemaEntity);
 
     //delete
-    void delete(Cinema name);
+    void delete(CinemaEntity cinemaEntity);
 
     //list
-    List<Cinema> getAll();
+    List getAll();
 }
