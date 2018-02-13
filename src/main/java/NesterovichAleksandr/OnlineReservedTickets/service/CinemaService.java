@@ -23,9 +23,9 @@ public class CinemaService extends Utils implements CinemaDAO {
 
     public CinemaEntity getIdCinema(long idCinema) {
         Session session = getSessionAndBeginTransaction();
-        CinemaEntity id = session.getEntityName(какое значение сюда передать и как?);
+        CinemaEntity id = session.get(CinemaEntity,idCinema);
         session.getTransaction().commit();
-        return null;
+        return id;
     }
 
     public void update(CinemaEntity cinemaEntity) {
