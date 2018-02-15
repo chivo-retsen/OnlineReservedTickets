@@ -2,16 +2,13 @@ package NesterovichAleksandr.OnlineReservedTickets.service;
 
 import NesterovichAleksandr.OnlineReservedTickets.DAO.CinemaDAO;
 import NesterovichAleksandr.OnlineReservedTickets.entity.CinemaEntity;
-import NesterovichAleksandr.OnlineReservedTickets.utils.HibernateSessionFactory;
 import NesterovichAleksandr.OnlineReservedTickets.utils.Utils;
+import org.hibernate.Query;
 import org.hibernate.Session;
 
-
-import java.sql.Connection;
 import java.util.List;
 
 public class CinemaService extends Utils implements CinemaDAO {
-
 
 
 
@@ -23,7 +20,7 @@ public class CinemaService extends Utils implements CinemaDAO {
 
     public CinemaEntity getIdCinema(long idCinema) {
         Session session = getSessionAndBeginTransaction();
-        CinemaEntity id = session.get(CinemaEntity,idCinema);
+        CinemaEntity id = session.get(CinemaEntity.class,idCinema);
         session.getTransaction().commit();
         return id;
     }
@@ -41,6 +38,11 @@ public class CinemaService extends Utils implements CinemaDAO {
     }
 
     public List getAll() {
-        return null;
+        Session session = getSessionAndBeginTransaction();
+        String nameClass = (CinemaEntity.class.getSimpleName());
+        Query query = session.createQuery("from " + nameClass);
+        List list = query.list();
+        session.getTransaction().commit();
+        return list;
     }
 }
