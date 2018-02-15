@@ -4,9 +4,7 @@ import NesterovichAleksandr.OnlineReservedTickets.entity.CinemaEntity;
 
 import java.util.List;
 
-public interface CinemaDAO {
-
-
+public interface CinemaDAO extends MainDAO {
 
     //create
     void create(CinemaEntity cinemaEntity);
@@ -20,6 +18,5 @@ public interface CinemaDAO {
     //delete
     void delete(CinemaEntity cinemaEntity);
 
-    //list
-    List getAll();
+
 }

@@ -6,19 +6,6 @@ import org.hibernate.SessionFactory;
 
 public class Utils {
 
-    public Session getSessionAndBeginTransaction(){
-        SessionFactory sessionFactory = HibernateSessionFactory.getSessionFactory();
-        if(sessionFactory == null){
-            throw new RuntimeException("Session factory is null");
-        }
-        Session session = sessionFactory.getCurrentSession();
-        try{
-            session.beginTransaction();
-        }catch (HibernateException e) {
-            e.printStackTrace();
-        }
-        return session;
-    }
 
 //    public Connection getConnection(){
 //        Connection connection = null;

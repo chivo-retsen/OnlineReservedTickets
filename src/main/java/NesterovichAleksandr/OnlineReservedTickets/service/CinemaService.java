@@ -2,13 +2,13 @@ package NesterovichAleksandr.OnlineReservedTickets.service;
 
 import NesterovichAleksandr.OnlineReservedTickets.DAO.CinemaDAO;
 import NesterovichAleksandr.OnlineReservedTickets.entity.CinemaEntity;
-import NesterovichAleksandr.OnlineReservedTickets.utils.Utils;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 
 import java.util.List;
 
-public class CinemaService extends Utils implements CinemaDAO {
+public class CinemaService extends AbstractService implements CinemaDAO {
 
 
 

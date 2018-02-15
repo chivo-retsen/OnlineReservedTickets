@@ -17,6 +17,5 @@ public interface FilmDAO {
     //delete
     void delete(FilmEntity filmEntity);
 
-    //list
-    List getAll();
+
 }
