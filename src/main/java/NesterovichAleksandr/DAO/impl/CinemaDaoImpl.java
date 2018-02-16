@@ -1,16 +1,18 @@
-package NesterovichAleksandr.OnlineReservedTickets.service;
+package NesterovichAleksandr.DAO.impl;
 
-import NesterovichAleksandr.OnlineReservedTickets.DAO.CinemaDAO;
-import NesterovichAleksandr.OnlineReservedTickets.entity.CinemaEntity;
+import NesterovichAleksandr.DAO.CinemaDao;
+import NesterovichAleksandr.entity.CinemaEntity;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
 
 import java.util.List;
 
-public class CinemaService extends AbstractService implements CinemaDAO {
+public class CinemaDaoImpl extends MainDaoImpl implements CinemaDao {
 
-
+    public CinemaDaoImpl() {
+        super(CinemaEntity.class); //?
+    }
 
     public void create(CinemaEntity cinemaEntity) {
         Session session = getSessionAndBeginTransaction();

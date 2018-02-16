@@ -1,4 +1,4 @@
-package NesterovichAleksandr.OnlineReservedTickets.entity;
+package NesterovichAleksandr.entity;
 
 import javax.persistence.*;
 

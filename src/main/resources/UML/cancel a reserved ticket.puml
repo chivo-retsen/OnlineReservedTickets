@@ -2,24 +2,24 @@
 
 actor Viewer
 
-Viewer ->> NesterovichAleksandr.OnlineReservedTickets.service.Application : getListReservedTicket()
+Viewer ->> Application : getListReservedTicket()
 activate Viewer
-activate NesterovichAleksandr.OnlineReservedTickets.service.Application
-NesterovichAleksandr.OnlineReservedTickets.service.Application -> DB : getListReservedTicket()
+activate Application
+Application -> DB : getListReservedTicket()
 activate DB
-NesterovichAleksandr.OnlineReservedTickets.service.Application <<-- DB : ListReservedTicket
+Application <<-- DB : ListReservedTicket
 deactivate DB
-deactivate NesterovichAleksandr.OnlineReservedTickets.service.Application
-Viewer ->> NesterovichAleksandr.OnlineReservedTickets.service.Application : deleteReservedTicket()
+deactivate Application
+Viewer ->> Application : deleteReservedTicket()
 deactivate Viewer
-activate NesterovichAleksandr.OnlineReservedTickets.service.Application
-NesterovichAleksandr.OnlineReservedTickets.service.Application -> DB : deleteReservedTicket(Ticket)
+activate Application
+Application -> DB : deleteReservedTicket(Ticket)
 activate DB
-NesterovichAleksandr.OnlineReservedTickets.service.Application <<-- DB : delete
+Application <<-- DB : delete
 deactivate DB
 
 database DB
 
-deactivate NesterovichAleksandr.OnlineReservedTickets.service.Application
+deactivate Application
 
 @enduml

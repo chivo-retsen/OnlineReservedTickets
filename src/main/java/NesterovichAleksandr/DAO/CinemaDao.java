@@ -1,10 +1,8 @@
-package NesterovichAleksandr.OnlineReservedTickets.DAO;
+package NesterovichAleksandr.DAO;
 
-import NesterovichAleksandr.OnlineReservedTickets.entity.CinemaEntity;
+import NesterovichAleksandr.entity.CinemaEntity;
 
-import java.util.List;
-
-public interface CinemaDAO extends MainDAO {
+public interface CinemaDao extends MainDao {
 
     //create
     void create(CinemaEntity cinemaEntity);

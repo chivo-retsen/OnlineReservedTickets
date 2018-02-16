@@ -1,7 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 
-class NesterovichAleksandr.OnlineReservedTickets.service.Application{
+class Application{
 
 +createCinema()
 +fillInfoCinema()
@@ -25,7 +25,7 @@ class NesterovichAleksandr.OnlineReservedTickets.service.Application{
 +saveInfoViewer()
 }
 
-class NesterovichAleksandr.OnlineReservedTickets.service.Film{
+class Film{
 -country : String
 -duration :short
 -genre : String
@@ -33,13 +33,13 @@ class NesterovichAleksandr.OnlineReservedTickets.service.Film{
 -yearOfIssue : short
 }
 
-class NesterovichAleksandr.OnlineReservedTickets.service.Seance{
+class Seance{
 -date
 -time
 +readSeat()
 }
 
-class NesterovichAleksandr.OnlineReservedTickets.service.Cinema{
+class Cinema{
 -name : String
 -address : String
 +createSeance()
@@ -48,19 +48,19 @@ class NesterovichAleksandr.OnlineReservedTickets.service.Cinema{
 +deleteSeance()
 }
 
-class NesterovichAleksandr.OnlineReservedTickets.service.Seat{
+class Seat{
 -row : byte
 -place : byte
 +numberReservedSeats()
 }
 
-class NesterovichAleksandr.OnlineReservedTickets.service.ReservedTicket{
+class ReservedTicket{
 -code : int
 -value : int
 +inputOrderData()
 }
 
-class NesterovichAleksandr.OnlineReservedTickets.service.IndividualCabinet{
+class IndividualCabinet{
 -firstName : String
 -lastName : String
 -phoneNumber: long
@@ -69,13 +69,13 @@ class NesterovichAleksandr.OnlineReservedTickets.service.IndividualCabinet{
 +deleteReservedTicket()
 }
 
-NesterovichAleksandr.OnlineReservedTickets.service.Application "1" -- "0..*" NesterovichAleksandr.OnlineReservedTickets.service.Film
-NesterovichAleksandr.OnlineReservedTickets.service.Application "1" -- "0..*" NesterovichAleksandr.OnlineReservedTickets.service.Cinema
-NesterovichAleksandr.OnlineReservedTickets.service.Film "1" -- "0..*" NesterovichAleksandr.OnlineReservedTickets.service.Seance
-NesterovichAleksandr.OnlineReservedTickets.service.Seance "1" -- "0..*" NesterovichAleksandr.OnlineReservedTickets.service.ReservedTicket
-NesterovichAleksandr.OnlineReservedTickets.service.ReservedTicket "0..*" -- "1" NesterovichAleksandr.OnlineReservedTickets.service.Seat
-NesterovichAleksandr.OnlineReservedTickets.service.Cinema "1" -- "1..*" NesterovichAleksandr.OnlineReservedTickets.service.Seat
-NesterovichAleksandr.OnlineReservedTickets.service.Cinema "1" *--  "0..*" NesterovichAleksandr.OnlineReservedTickets.service.Seance
-NesterovichAleksandr.OnlineReservedTickets.service.IndividualCabinet "1" *-- "0..*" NesterovichAleksandr.OnlineReservedTickets.service.ReservedTicket
+Application "1" -- "0..*" Film
+Application "1" -- "0..*" Cinema
+Film "1" -- "0..*" Seance
+Seance "1" -- "0..*" ReservedTicket
+ReservedTicket "0..*" -- "1" Seat
+Cinema "1" -- "1..*" Seat
+Cinema "1" *--  "0..*" Seance
+IndividualCabinet "1" *-- "0..*" ReservedTicket
 
 @enduml

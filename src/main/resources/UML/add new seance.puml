@@ -2,28 +2,28 @@
 
 actor theater_manager
 
-theater_manager ->> NesterovichAleksandr.OnlineReservedTickets.service.Application : createSeance()
+theater_manager ->> Application : createSeance()
 activate theater_manager
-theater_manager ->> NesterovichAleksandr.OnlineReservedTickets.service.Application : fillInfoSeance()
-theater_manager ->> NesterovichAleksandr.OnlineReservedTickets.service.Application : saveSeance()
+theater_manager ->> Application : fillInfoSeance()
+theater_manager ->> Application : saveSeance()
 deactivate theater_manager
 
-activate NesterovichAleksandr.OnlineReservedTickets.service.Application
-create NesterovichAleksandr.OnlineReservedTickets.service.Seance
-NesterovichAleksandr.OnlineReservedTickets.service.Application -->> NesterovichAleksandr.OnlineReservedTickets.service.Seance
-NesterovichAleksandr.OnlineReservedTickets.service.Application -> NesterovichAleksandr.OnlineReservedTickets.service.Seance : fillInfoSeance(data, time)
-activate NesterovichAleksandr.OnlineReservedTickets.service.Seance
-NesterovichAleksandr.OnlineReservedTickets.service.Application <<-- NesterovichAleksandr.OnlineReservedTickets.service.Seance
-deactivate NesterovichAleksandr.OnlineReservedTickets.service.Seance
-destroy NesterovichAleksandr.OnlineReservedTickets.service.Seance
+activate Application
+create Seance
+Application -->> Seance
+Application -> Seance : fillInfoSeance(data, time)
+activate Seance
+Application <<-- Seance
+deactivate Seance
+destroy Seance
 
 database DB
 
-NesterovichAleksandr.OnlineReservedTickets.service.Application -> DB : saveSeance()
+Application -> DB : saveSeance()
 activate DB
-NesterovichAleksandr.OnlineReservedTickets.service.Application <<-- DB
+Application <<-- DB
 deactivate DB
 
-deactivate NesterovichAleksandr.OnlineReservedTickets.service.Application
+deactivate Application
 
 @enduml

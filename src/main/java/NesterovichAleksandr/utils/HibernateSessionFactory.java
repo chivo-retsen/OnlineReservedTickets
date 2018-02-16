@@ -1,4 +1,4 @@
-package NesterovichAleksandr.OnlineReservedTickets.utils;
+package NesterovichAleksandr.utils;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;

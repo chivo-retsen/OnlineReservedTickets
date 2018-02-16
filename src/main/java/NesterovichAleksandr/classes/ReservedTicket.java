@@ -1,4 +1,4 @@
-package NesterovichAleksandr.OnlineReservedTickets.service;
+package NesterovichAleksandr.classes;
 
 public class ReservedTicket {
 

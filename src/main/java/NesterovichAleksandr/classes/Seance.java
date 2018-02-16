@@ -1,4 +1,4 @@
-package NesterovichAleksandr.OnlineReservedTickets.service;
+package NesterovichAleksandr.classes;
 
 import java.sql.Time;
 import java.util.Date;

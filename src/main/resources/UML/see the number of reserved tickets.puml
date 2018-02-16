@@ -2,17 +2,17 @@
 
 actor theater_manager
 
-theater_manager ->> NesterovichAleksandr.OnlineReservedTickets.service.Application : getListReservedTicket()
+theater_manager ->> Application : getListReservedTicket()
 
-activate NesterovichAleksandr.OnlineReservedTickets.service.Application
+activate Application
 
 database DB
 
-NesterovichAleksandr.OnlineReservedTickets.service.Application -> DB : getListReservedTicket()
+Application -> DB : getListReservedTicket()
 activate DB
-NesterovichAleksandr.OnlineReservedTickets.service.Application <<-- DB : ListReservedTicket
+Application <<-- DB : ListReservedTicket
 deactivate DB
 
-deactivate NesterovichAleksandr.OnlineReservedTickets.service.Application
+deactivate Application
 
 @enduml

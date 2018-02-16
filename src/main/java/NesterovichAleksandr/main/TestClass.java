@@ -1,4 +1,4 @@
-package NesterovichAleksandr.OnlineReservedTickets.main;
+package NesterovichAleksandr.main;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

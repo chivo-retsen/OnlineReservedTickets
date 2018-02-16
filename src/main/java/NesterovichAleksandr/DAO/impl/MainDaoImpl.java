@@ -1,17 +1,19 @@
-package NesterovichAleksandr.OnlineReservedTickets.service;
+package NesterovichAleksandr.DAO.impl;
 
-import NesterovichAleksandr.OnlineReservedTickets.DAO.MainDAO;
-import NesterovichAleksandr.OnlineReservedTickets.entity.CinemaEntity;
-import NesterovichAleksandr.OnlineReservedTickets.utils.HibernateSessionFactory;
+import NesterovichAleksandr.DAO.MainDao;
+import NesterovichAleksandr.entity.CinemaEntity;
+import NesterovichAleksandr.utils.HibernateSessionFactory;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import java.util.List;
 
-public abstract class AbstractService implements MainDAO{
 
-    public abstract List getAll();
+public abstract class MainDaoImpl implements MainDao {
+
+
+    public MainDaoImpl(Class<CinemaEntity> cinemaEntityClass) { //?
+    }
 
     public Session getSessionAndBeginTransaction(){
         SessionFactory sessionFactory = HibernateSessionFactory.getSessionFactory();
