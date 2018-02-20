@@ -1,13 +1,14 @@
-package NesterovichAleksandr.DAO;
+package com.reservation.dao;
 
-import NesterovichAleksandr.entity.FilmEntity;
+import com.reservation.entity.FilmEntity;
 
-public interface FilmDao {
+public interface FilmDao extends MainDao {
+
     //create
     void create(FilmEntity filmEntity);
 
     //read
-    FilmEntity getIdCinema(long idCinema);
+    FilmEntity getIdFilm(long idFilm);
 
     //update
     void update(FilmEntity filmEntity);

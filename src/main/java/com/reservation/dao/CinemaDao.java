@@ -1,6 +1,6 @@
-package NesterovichAleksandr.DAO;
+package com.reservation.dao;
 
-import NesterovichAleksandr.entity.CinemaEntity;
+import com.reservation.entity.CinemaEntity;
 
 public interface CinemaDao extends MainDao {
 

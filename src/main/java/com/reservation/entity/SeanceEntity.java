@@ -1,4 +1,4 @@
-package NesterovichAleksandr.entity;
+package com.reservation.entity;
 
 import javax.persistence.*;
 import java.sql.Timestamp;

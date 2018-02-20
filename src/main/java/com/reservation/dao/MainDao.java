@@ -1,4 +1,4 @@
-package NesterovichAleksandr.DAO;
+package com.reservation.dao;
 
 import java.util.List;
 

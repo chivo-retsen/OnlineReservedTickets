@@ -12,12 +12,12 @@
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 
 
-    <mapping class="NesterovichAleksandr.entity.CinemaEntity"/>
-    <mapping class="NesterovichAleksandr.entity.FilmEntity"/>
-    <mapping class="NesterovichAleksandr.entity.IndividualcabinetEntity"/>
-    <mapping class="NesterovichAleksandr.entity.ReservedTicketEntity"/>
-    <mapping class="NesterovichAleksandr.entity.SeanceEntity"/>
-    <mapping class="NesterovichAleksandr.entity.SeatEntity"/>
+    <mapping class="com.reservation.entity.CinemaEntity"/>
+    <mapping class="com.reservation.entity.FilmEntity"/>
+    <mapping class="com.reservation.entity.IndividualCabinetEntity"/>
+    <mapping class="com.reservation.entity.ReservedTicketEntity"/>
+    <mapping class="com.reservation.entity.SeanceEntity"/>
+    <mapping class="com.reservation.entity.SeatEntity"/>
 
     <!-- DB schema will be updated if needed -->
    <!-- <property name="hbm2ddl.auto">update</property -->

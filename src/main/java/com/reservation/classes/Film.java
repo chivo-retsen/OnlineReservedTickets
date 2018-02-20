@@ -1,4 +1,4 @@
-package NesterovichAleksandr.classes;
+package com.reservation.classes;
 
 public class Film {
 

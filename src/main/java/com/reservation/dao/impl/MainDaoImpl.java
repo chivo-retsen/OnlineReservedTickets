@@ -1,8 +1,7 @@
-package NesterovichAleksandr.DAO.impl;
+package com.reservation.dao.impl;
 
-import NesterovichAleksandr.DAO.MainDao;
-import NesterovichAleksandr.entity.CinemaEntity;
-import NesterovichAleksandr.utils.HibernateSessionFactory;
+import com.reservation.dao.MainDao;
+import com.reservation.utils.HibernateSessionFactory;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,10 +9,6 @@ import org.hibernate.SessionFactory;
 
 
 public abstract class MainDaoImpl implements MainDao {
-
-
-    public MainDaoImpl(Class<CinemaEntity> cinemaEntityClass) { //?
-    }
 
     public Session getSessionAndBeginTransaction(){
         SessionFactory sessionFactory = HibernateSessionFactory.getSessionFactory();

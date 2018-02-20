@@ -1,11 +1,11 @@
-package NesterovichAleksandr.entity;
+package com.reservation.entity;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "individualcabinet", schema = "online_reserved_tickets", catalog = "")
-public class IndividualcabinetEntity {
-    private int idindividualCabinet;
+public class IndividualCabinetEntity {
+    private int idIndividualCabinet;
     private String login;
     private String firstName;
     private String lastName;
@@ -13,12 +13,12 @@ public class IndividualcabinetEntity {
 
     @Id
     @Column(name = "idindividualCabinet", nullable = false)
-    public int getIdindividualCabinet() {
-        return idindividualCabinet;
+    public int getIdIndividualCabinet() {
+        return idIndividualCabinet;
     }
 
-    public void setIdindividualCabinet(int idindividualCabinet) {
-        this.idindividualCabinet = idindividualCabinet;
+    public void setIdIndividualCabinet(int idIndividualCabinet) {
+        this.idIndividualCabinet = idIndividualCabinet;
     }
 
     @Basic
@@ -66,9 +66,9 @@ public class IndividualcabinetEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        IndividualcabinetEntity that = (IndividualcabinetEntity) o;
+        IndividualCabinetEntity that = (IndividualCabinetEntity) o;
 
-        if (idindividualCabinet != that.idindividualCabinet) return false;
+        if (idIndividualCabinet != that.idIndividualCabinet) return false;
         if (login != null ? !login.equals(that.login) : that.login != null) return false;
         if (firstName != null ? !firstName.equals(that.firstName) : that.firstName != null) return false;
         if (lastName != null ? !lastName.equals(that.lastName) : that.lastName != null) return false;
@@ -79,7 +79,7 @@ public class IndividualcabinetEntity {
 
     @Override
     public int hashCode() {
-        int result = idindividualCabinet;
+        int result = idIndividualCabinet;
         result = 31 * result + (login != null ? login.hashCode() : 0);
         result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
         result = 31 * result + (lastName != null ? lastName.hashCode() : 0);

@@ -1,4 +1,4 @@
-package NesterovichAleksandr.main;
+package com.reservation.main;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

@@ -1,8 +1,4 @@
-package NesterovichAleksandr.utils;
-
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+package com.reservation.utils;
 
 public class Utils {
 

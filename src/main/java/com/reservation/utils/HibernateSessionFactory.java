@@ -1,6 +1,5 @@
-package NesterovichAleksandr.utils;
+package com.reservation.utils;
 
-import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
