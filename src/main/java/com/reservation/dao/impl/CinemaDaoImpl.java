@@ -5,10 +5,16 @@ import com.reservation.entity.CinemaEntity;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.annotations.common.util.impl.LoggerFactory;
+import org.springframework.stereotype.Repository;
+//  import org.slf4j.LoggerFactory; //удалить зависимость
 
 import java.util.List;
+import java.util.logging.Logger;
 
+@Repository //какая польза?
 public class CinemaDaoImpl extends MainDaoImpl implements CinemaDao {
+    // private static final Logger logger = LoggerFactory.getLogger(CinemaDaoImpl.class);  //удалить
 
 //    public CinemaDaoImpl() {
 //        super(CinemaEntity.class); //?

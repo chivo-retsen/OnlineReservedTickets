@@ -14,7 +14,7 @@ public interface CinemaDao extends MainDao {
     void update(CinemaEntity cinemaEntity);
 
     //delete
-    void delete(CinemaEntity cinemaEntity);
+    void delete(CinemaEntity cinemaEntity); //проверить принимаемые параметры
 
 
 }
