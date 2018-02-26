@@ -15,7 +15,7 @@ public class IndividualCabinetDaoImpl extends MainDaoImpl implements IndividualC
         session.getTransaction().commit();
     }
 
-    public IndividualCabinetEntity getIdIndividualCabinet(long idIndividualCabinet) {
+    public IndividualCabinetEntity read(long idIndividualCabinet) {
         Session session = getSessionAndBeginTransaction();
         IndividualCabinetEntity id = session.get(IndividualCabinetEntity.class,idIndividualCabinet);
         session.getTransaction().commit();

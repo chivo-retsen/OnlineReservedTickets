@@ -8,12 +8,12 @@ public interface CinemaService extends MainService {
     void create(CinemaEntity cinemaEntity);
 
     //read
-    CinemaEntity getIdCinema(long idCinema);
+    CinemaEntity read(long idCinema);
 
     //update
     void update(CinemaEntity cinemaEntity);
 
     //delete
-    void delete(CinemaEntity cinemaEntity); //проверить принимаемые параметры (id)
+    void delete(CinemaEntity cinemaEntity); //проверить принимаемые параметры (id?)
 
 }

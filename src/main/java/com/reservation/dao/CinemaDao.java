@@ -8,13 +8,13 @@ public interface CinemaDao extends MainDao {
     void create(CinemaEntity cinemaEntity);
 
     //read
-    CinemaEntity getIdCinema(long idCinema);
+    CinemaEntity read(long idCinema);
 
     //update
     void update(CinemaEntity cinemaEntity);
 
     //delete
-    void delete(CinemaEntity cinemaEntity); //проверить принимаемые параметры
+    void delete(CinemaEntity cinemaEntity); //проверить принимаемые параметры (id)
 
 
 }

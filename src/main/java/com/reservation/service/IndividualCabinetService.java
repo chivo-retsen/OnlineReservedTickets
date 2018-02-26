@@ -1,8 +1,8 @@
-package com.reservation.dao;
+package com.reservation.service;
 
 import com.reservation.entity.IndividualCabinetEntity;
 
-public interface IndividualCabinetDao extends MainDao {
+public interface IndividualCabinetService extends MainService {
 
     //create
     void create(IndividualCabinetEntity individualCabinetEntity);
@@ -14,5 +14,5 @@ public interface IndividualCabinetDao extends MainDao {
     void update(IndividualCabinetEntity individualCabinetEntity);
 
     //delete
-    void delete(IndividualCabinetEntity individualCabinetEntity);
+    void delete(IndividualCabinetEntity individualCabinetEntity); //проверить принимаемые параметры (id?)
 }

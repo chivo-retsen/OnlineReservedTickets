@@ -18,15 +18,14 @@ public class CinemaServiceImpl implements CinemaService {
         this.cinemaDao = cinemaDao;
     }
 
-
     @Transactional
     public void create(CinemaEntity cinemaEntity) {
         this.cinemaDao.create(cinemaEntity);
     }
 
     @Transactional
-    public CinemaEntity getIdCinema(long idCinema) {
-        return this.cinemaDao.getIdCinema(idCinema);
+    public CinemaEntity read(long idCinema) {
+        return this.cinemaDao.read(idCinema);
     }
 
     @Transactional

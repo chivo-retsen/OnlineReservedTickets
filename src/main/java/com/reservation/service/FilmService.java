@@ -1,8 +1,8 @@
-package com.reservation.dao;
+package com.reservation.service;
 
 import com.reservation.entity.FilmEntity;
 
-public interface FilmDao extends MainDao {
+public interface FilmService extends MainService {
 
     //create
     void create(FilmEntity filmEntity);
@@ -14,7 +14,5 @@ public interface FilmDao extends MainDao {
     void update(FilmEntity filmEntity);
 
     //delete
-    void delete(FilmEntity filmEntity);
-
-
+    void delete(FilmEntity filmEntity); //проверить принимаемые параметры (id?)
 }

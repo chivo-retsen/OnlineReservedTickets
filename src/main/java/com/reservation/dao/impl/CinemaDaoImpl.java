@@ -26,7 +26,7 @@ public class CinemaDaoImpl extends MainDaoImpl implements CinemaDao {
         session.getTransaction().commit();
     }
 
-    public CinemaEntity getIdCinema(long idCinema) {
+    public CinemaEntity read(long idCinema) {
         Session session = getSessionAndBeginTransaction();
         CinemaEntity id = session.get(CinemaEntity.class,idCinema);
         session.getTransaction().commit();

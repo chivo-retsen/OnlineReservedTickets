@@ -1,8 +1,8 @@
-package com.reservation.dao;
+package com.reservation.service;
 
 import com.reservation.entity.ReservedTicketEntity;
 
-public interface ReservedTicketDao extends MainDao {
+public interface ReservedTicketService extends MainService {
 
     //create
     void create(ReservedTicketEntity reservedTicketEntity);
@@ -14,7 +14,5 @@ public interface ReservedTicketDao extends MainDao {
     void update(ReservedTicketEntity reservedTicketEntity);
 
     //delete
-    void delete(ReservedTicketEntity reservedTicketEntity); //проверить принимаемые параметры (id)
-
-
+    void delete(ReservedTicketEntity reservedTicketEntity); //проверить принимаемые параметры (id?)
 }

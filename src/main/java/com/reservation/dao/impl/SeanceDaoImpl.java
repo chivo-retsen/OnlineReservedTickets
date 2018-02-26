@@ -1,42 +1,42 @@
 package com.reservation.dao.impl;
 
-import com.reservation.dao.FilmDao;
-import com.reservation.entity.FilmEntity;
+import com.reservation.dao.SeanceDao;
+import com.reservation.entity.SeanceEntity;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
 import java.util.List;
 
-public class FilmDaoImpl extends MainDaoImpl implements FilmDao {
+public class SeanceDaoImpl extends MainDaoImpl implements SeanceDao {
 
-    public void create(FilmEntity filmEntity) {
+    public void create(SeanceEntity seanceEntity) {
         Session session = getSessionAndBeginTransaction();
-        session.save(filmEntity);
+        session.save(seanceEntity);
         session.getTransaction().commit();
     }
 
-    public FilmEntity read(long idFilm) {
+    public SeanceEntity read(long idSeance) {
         Session session = getSessionAndBeginTransaction();
-        FilmEntity id = session.get(FilmEntity.class,idFilm);
+        SeanceEntity id = session.get(SeanceEntity.class, idSeance);
         session.getTransaction().commit();
         return id;
     }
 
-    public void update(FilmEntity filmEntity) {
+    public void update(SeanceEntity seanceEntity) {
         Session session = getSessionAndBeginTransaction();
-        session.update(filmEntity);
+        session.update(seanceEntity);
         session.getTransaction().commit();
     }
 
-    public void delete(FilmEntity filmEntity) {
+    public void delete(SeanceEntity seanceEntity) {
         Session session = getSessionAndBeginTransaction();
-        session.delete(filmEntity);
+        session.delete(seanceEntity);
         session.getTransaction().commit();
     }
 
     public List getAll() {
         Session session = getSessionAndBeginTransaction();
-        String nameClass = (FilmEntity.class.getSimpleName());
+        String nameClass = (SeanceEntity.class.getSimpleName());
         Query query = session.createQuery("from " + nameClass);
         List list = query.list();
         session.getTransaction().commit();
